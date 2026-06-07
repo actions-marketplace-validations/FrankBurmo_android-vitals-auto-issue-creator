@@ -27,7 +27,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: FrankBurmo/android-vitals-auto-issue-creator@v1
+      - uses: FrankBurmo/android-vitals-auto-issue-creator@v2
         with:
           service-account-json: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
           package-names: "com.example.myapp"
@@ -39,7 +39,7 @@ jobs:
 If you manage multiple apps and want them to report to different repositories:
 
 ```yaml
-- uses: FrankBurmo/android-vitals-auto-issue-creator@v1
+- uses: FrankBurmo/android-vitals-auto-issue-creator@v2
   with:
     service-account-json: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
     package-names: "com.example.app1, com.example.app2"
