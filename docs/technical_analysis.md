@@ -47,8 +47,8 @@ graph TD
 
 Selv om koden er ryddig, er det flere områder som kan optimaliseres for produksjonsskala, spesielt med tanke på API-hastighetsbegrensninger (Rate Limits) og robusthet.
 
-### A. Overflødige API-kall ved sjekk av Labels (Høy Prioritet)
-I [sync.ts](../src/sync.ts#L35-L38) kjøres det sjekker for labels for hver eneste feil som skal opprettes:
+### A. Overflødige API-kall ved sjekk av Labels (Høy Prioritet) — **LØST (Fase 1 fullført)**
+I [sync.ts](../src/sync.ts#L35-L38) ble det opprinnelig kjørt sjekker for labels for hver eneste feil som ble opprettet:
 ```typescript
 await githubClient.ensureLabel(dedupeLabel, "ededed");
 for (const label of config.extraLabels) {
@@ -65,8 +65,8 @@ Flere steder i koden er det brukt `any` for objekter som kommer fra eksterne bib
 * I [play-client.ts](../src/play-client.ts#L6-L7): `private auth: any;` og `private reporting: any;`
 * **Konsekvens:** Man mister fordelene med IntelliSense og statisk analyse for disse kritiske API-objektene. Endringer i eksterne biblioteker vil ikke fanges opp av TypeScript-kompilatoren.
 
-### C. Hardkodet Språk og Manglende Fleksibilitet (Medium Prioritet)
-Malene for lukking og opprettelse av issues er delvis hardkodet på norsk og engelsk:
+### C. Hardkodet Språk og Manglende Fleksibilitet (Medium Prioritet) — **DELVIS LØST**
+*Kildekoden er nå oversatt fra norsk til engelsk.* Malene for lukking og opprettelse av issues var tidligere hardkodet på norsk og engelsk:
 * Tittel og tabellinnhold er på norsk: `"Årsak"`, `"Berørte brukere"`, etc.
 * Kommentaren ved lukking i [sync.ts](../src/sync.ts#L48) er hardkodet: `"Dette problemet er markert som løst i Google Play Console. Lukker issue."`
 * **Konsekvens:** Actionen er mindre egnet for internasjonale team eller prosjekter som ønsker engelsk eller tilpasset tekst på sine issues.
@@ -84,12 +84,12 @@ Nettverkskall mot Google Play Console og GitHub API kjøres uten noen form for r
 
 Vi foreslår å dele forbedringene inn i fire faser for å sikre en kontrollert og testbar utvikling.
 
-### Fase 1: Ytelsesoptimalisering (Caching av Labels)
+### Fase 1: Ytelsesoptimalisering (Caching of Labels) — **FULLFØRT**
 * **Mål:** Redusere antall API-kall mot GitHub dramatisk.
-* **Tiltak:**
-  1. Hent alle eksisterende labels i repositoriet i ett enkelt API-kall (`listLabelsForRepo`) ved oppstart av `GitHubClient`.
-  2. Lagre disse i et lokalt `Set<string>` i minnet.
-  3. Endre `ensureLabel` til å sjekke mot dette settet. Gjør kun `createLabel` dersom labelen ikke finnes i settet, og oppdater settet etter opprettelse.
+* **Tiltak (Fullført):**
+  1. Hent alle eksisterende labels i repositoriet i ett enkelt API-kall (`listLabelsForRepo`) ved oppstart av `GitHubClient`. (Løst ved lazy-loading i minnet).
+  2. Lagre disse i et lokalt `Set<string>` i minnet. (Løst ved `existingLabels` i `GitHubClient`).
+  3. Endre `ensureLabel` til å sjekke mot dette settet. Gjør kun `createLabel` dersom labelen ikke finnes i settet, og oppdater settet etter opprettelse. (Løst).
 
 ### Fase 2: Forbedret Typesikkerhet
 * **Mål:** Fjerne `any` og sikre full TypeScript-støtte.
@@ -112,11 +112,11 @@ Vi foreslår å dele forbedringene inn i fire faser for å sikre en kontrollert 
 
 ---
 
-## 5. Estimert Tidsplan og Prioritering
+## 5. Estimert Tidsplan og Status
 
-| Fase | Prioritet | Beskrivelse | Estimert tidsbruk |
+| Fase | Prioritet | Beskrivelse | Status |
 | :--- | :--- | :--- | :--- |
-| **Fase 1** | 🔥 Høy | Label Caching (Unngå rate limiting) | 1-2 timer |
-| **Fase 2** | 📈 Medium | Fjerne `any` og forbedre typesikkerhet | 1-2 timer |
-| **Fase 3** | 🌐 Medium | Konfigurerbare maler og språk | 2 timer |
-| **Fase 4** | 🛡️ Medium | Retry-logikk og flere enhetstester | 2 timer |
+| **Fase 1** | 🔥 Høy | Label Caching (Unngå rate limiting) | **Fullført** (Løst via minne-caching) |
+| **Fase 2** | 📈 Medium | Fjerne `any` og forbedre typesikkerhet | Gjenstår |
+| **Fase 3** | 🌐 Medium | Konfigurerbare maler og språk | **Påbegynt** (Hardkodet norsk oversatt til engelsk) |
+| **Fase 4** | 🛡️ Medium | Retry-logikk og flere enhetstester | Gjenstår |
