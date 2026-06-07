@@ -1,8 +1,8 @@
 # Android Vitals → GitHub Issues
 
-[![CI](https://github.com/frank/android-vitals-auto-issue-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/frank/android-vitals-auto-issue-creator/actions/workflows/ci.yml)
+[![CI](https://github.com/FrankBurmo/android-vitals-auto-issue-creator/actions/workflows/ci.yml/badge.svg)](https://github.com/FrankBurmo/android-vitals-auto-issue-creator/actions/workflows/ci.yml)
 [![Marketplace](https://img.shields.io/badge/Marketplace-Android%20Vitals%20Issues-blue.svg?logo=github)](https://github.com/marketplace/actions/android-vitals-issues)
-[![v1](https://img.shields.io/badge/tag-v1-green.svg)](https://github.com/frank/android-vitals-auto-issue-creator/releases)
+[![v1](https://img.shields.io/badge/tag-v1-green.svg)](https://github.com/FrankBurmo/android-vitals-auto-issue-creator/releases)
 
 Sync crash and ANR errors from Google Play Console to GitHub Issues automatically. This action creates one GitHub issue per unique problem and uses labels for deduplication, ensuring your team stays on top of production issues without manual tracking.
 
@@ -27,7 +27,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: frank/android-vitals-issues@v1
+      - uses: FrankBurmo/android-vitals-auto-issue-creator@v1
         with:
           service-account-json: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
           package-names: "com.example.myapp"
@@ -39,7 +39,7 @@ jobs:
 If you manage multiple apps and want them to report to different repositories:
 
 ```yaml
-- uses: frank/android-vitals-issues@v1
+- uses: FrankBurmo/android-vitals-auto-issue-creator@v1
   with:
     service-account-json: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
     package-names: "com.example.app1, com.example.app2"
