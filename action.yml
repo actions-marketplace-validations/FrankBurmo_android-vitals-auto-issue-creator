@@ -1,6 +1,6 @@
 name: "Android Vitals → GitHub Issues"
 description: "Sync crash and ANR errors from Google Play Console to GitHub Issues. One issue per unique problem."
-author: "frank"
+author: "FrankBurmo"
 
 branding:
   icon: "alert-triangle"
@@ -65,5 +65,5 @@ outputs:
     description: "Number of GitHub issues closed (if close-resolved is true)"
 
 runs:
-  using: "node20"
+  using: "node24"
   main: "dist/index.js"
