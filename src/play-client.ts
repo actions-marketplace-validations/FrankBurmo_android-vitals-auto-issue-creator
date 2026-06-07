@@ -1,5 +1,5 @@
 import { google } from "googleapis";
-import { ErrorIssue } from "./types";
+import { ErrorIssue } from "./types.js";
 
 export class PlayReportingClient {
   private auth: any;

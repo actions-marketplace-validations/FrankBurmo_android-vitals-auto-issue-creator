@@ -1,6 +1,7 @@
 {
   "name": "android-vitals-issues",
   "version": "1.0.0",
+  "type": "module",
   "private": true,
   "description": "Sync crash and ANR errors from Google Play Console to GitHub Issues",
   "main": "dist/index.js",

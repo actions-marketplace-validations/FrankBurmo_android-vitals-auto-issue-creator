@@ -1,7 +1,7 @@
 import * as core from "@actions/core";
-import { ActionConfig } from "./types";
-import { PlayReportingClient } from "./play-client";
-import { GitHubClient } from "./github-client";
+import { ActionConfig } from "./types.js";
+import { PlayReportingClient } from "./play-client.js";
+import { GitHubClient } from "./github-client.js";
 
 export async function syncApp(
   playClient: PlayReportingClient,

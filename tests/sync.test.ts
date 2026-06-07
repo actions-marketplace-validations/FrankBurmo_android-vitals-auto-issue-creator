@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { syncApp } from "../src/sync";
-import { ActionConfig, ErrorIssue } from "../src/types";
+import { syncApp } from "../src/sync.js";
+import { ActionConfig, ErrorIssue } from "../src/types.js";
 
-vi.mock("../src/play-client");
-vi.mock("../src/github-client");
+vi.mock("../src/play-client.js");
+vi.mock("../src/github-client.js");
 
 describe("sync", () => {
   let mockPlayClient: any;

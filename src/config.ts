@@ -1,5 +1,5 @@
 import * as core from "@actions/core";
-import { ActionConfig } from "./types";
+import { ActionConfig } from "./types.js";
 
 export function parseConfig(): ActionConfig {
   const serviceAccountJsonStr = core.getInput("service-account-json", { required: true });

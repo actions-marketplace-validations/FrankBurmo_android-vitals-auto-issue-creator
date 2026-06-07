@@ -1,6 +1,6 @@
 import * as github from "@actions/github";
 
-import { ErrorIssue } from "./types";
+import { ErrorIssue } from "./types.js";
 
 export class GitHubClient {
   private octokit: any;

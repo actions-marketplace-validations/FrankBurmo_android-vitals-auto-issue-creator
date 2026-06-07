@@ -1,8 +1,8 @@
 import * as core from "@actions/core";
-import { parseConfig } from "./config";
-import { PlayReportingClient } from "./play-client";
-import { GitHubClient } from "./github-client";
-import { syncApp } from "./sync";
+import { parseConfig } from "./config.js";
+import { PlayReportingClient } from "./play-client.js";
+import { GitHubClient } from "./github-client.js";
+import { syncApp } from "./sync.js";
 
 async function run(): Promise<void> {
   try {

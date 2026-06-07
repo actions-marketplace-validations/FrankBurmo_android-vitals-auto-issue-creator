@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import * as core from "@actions/core";
-import { parseConfig } from "../src/config";
+import { parseConfig } from "../src/config.js";
 
 vi.mock("@actions/core");
 
