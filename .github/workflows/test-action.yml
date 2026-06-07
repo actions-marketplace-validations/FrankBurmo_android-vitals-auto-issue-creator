@@ -1,0 +1,19 @@
+name: Integration test (dry-run)
+on:
+  workflow_dispatch:
+    inputs:
+      package-name:
+        description: "Package name to test against"
+        required: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./   # Use local version of action
+        with:
+          service-account-json: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          package-names: ${{ inputs.package-name }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          min-affected-users: "999999"  # Prevent actual issue creation

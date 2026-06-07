@@ -1,0 +1,35 @@
+[
+  {
+    "name": "apps/com.example.app/errorIssues/12345",
+    "type": "CRASH",
+    "cause": "java.lang.NullPointerException",
+    "location": "MainActivity.onCreate",
+    "distinctUsers": "50",
+    "errorReportCount": "100",
+    "firstAppVersion": { "versionCode": 100 },
+    "lastAppVersion": { "versionCode": 105 },
+    "resolutionState": "OPEN"
+  },
+  {
+    "name": "apps/com.example.app/errorIssues/67890",
+    "type": "ANR",
+    "cause": "Input dispatching timed out",
+    "location": "MainActivity",
+    "distinctUsers": "10",
+    "errorReportCount": "20",
+    "firstAppVersion": { "versionCode": 100 },
+    "lastAppVersion": { "versionCode": 105 },
+    "resolutionState": "OPEN"
+  },
+  {
+    "name": "apps/com.example.app/errorIssues/abcde",
+    "type": "CRASH",
+    "cause": "java.lang.IllegalStateException",
+    "location": "DetailActivity.onStart",
+    "distinctUsers": "5",
+    "errorReportCount": "10",
+    "firstAppVersion": { "versionCode": 102 },
+    "lastAppVersion": { "versionCode": 104 },
+    "resolutionState": "RESOLVED"
+  }
+]

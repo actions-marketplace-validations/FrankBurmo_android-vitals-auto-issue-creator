@@ -1,0 +1,37 @@
+{
+  "name": "android-vitals-issues",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sync crash and ANR errors from Google Play Console to GitHub Issues",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "test": "vitest run",
+    "lint": "eslint src tests",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "android",
+    "vitals",
+    "google-play",
+    "crash-reporting"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.10.1",
+    "@actions/github": "^6.0.0",
+    "googleapis": "^144.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vercel/ncc": "^0.38.1",
+    "eslint": "^8.56.0",
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}

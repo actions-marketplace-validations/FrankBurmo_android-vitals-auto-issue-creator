@@ -1,0 +1,69 @@
+name: "Android Vitals → GitHub Issues"
+description: "Sync crash and ANR errors from Google Play Console to GitHub Issues. One issue per unique problem."
+author: "frank"
+
+branding:
+  icon: "alert-triangle"
+  color: "red"
+
+inputs:
+  service-account-json:
+    description: "Google service account JSON key with Play Developer Reporting access"
+    required: true
+
+  package-names:
+    description: "Comma-separated list of Android package names to monitor"
+    required: true
+
+  github-token:
+    description: "GitHub token with issues:write permission"
+    required: false
+    default: ${{ github.token }}
+
+  target-repo:
+    description: "Target repo for issues (owner/repo). Defaults to the repo running the action."
+    required: false
+    default: ""
+
+  package-repo-map:
+    description: |
+      JSON map from package name to GitHub repo (owner/repo).
+      Used when monitoring multiple apps with different repos.
+      Example: {"com.example.app1": "owner/repo1", "com.example.app2": "owner/repo2"}
+    required: false
+    default: "{}"
+
+  label-prefix:
+    description: "Prefix for deduplication labels"
+    required: false
+    default: "play-error:"
+
+  extra-labels:
+    description: "Comma-separated list of additional labels to add to created issues"
+    required: false
+    default: "play-console,crash"
+
+  close-resolved:
+    description: "Automatically close GitHub issues when Play Console marks the error as resolved"
+    required: false
+    default: "false"
+
+  error-types:
+    description: "Which error types to sync: CRASH, ANR, or ALL"
+    required: false
+    default: "ALL"
+
+  min-affected-users:
+    description: "Only create issues for errors affecting at least this many users"
+    required: false
+    default: "1"
+
+outputs:
+  issues-created:
+    description: "Number of new GitHub issues created"
+  issues-closed:
+    description: "Number of GitHub issues closed (if close-resolved is true)"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
