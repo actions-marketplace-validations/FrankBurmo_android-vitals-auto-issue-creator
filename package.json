@@ -6,7 +6,7 @@
   "description": "Sync crash and ANR errors from Google Play Console to GitHub Issues",
   "main": "dist/index.js",
   "scripts": {
-    "build": "ncc build src/index.ts -o dist --source-map --license licenses.txt",
+    "build": "node --max-old-space-size=4096 node_modules/@vercel/ncc/dist/ncc/cli.js build src/index.ts -o dist --source-map --license licenses.txt",
     "test": "vitest run",
     "lint": "eslint src tests",
     "prepare": "npm run build"
@@ -22,9 +22,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.10.1",
-    "@actions/github": "^6.0.0",
-    "googleapis": "^144.0.0"
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1",
+    "@googleapis/playdeveloperreporting": "^10.0.0",
+    "google-auth-library": "^10.7.0"
   },
   "devDependencies": {
     "@types/node": "^25.9.1",
@@ -32,7 +33,7 @@
     "@typescript-eslint/parser": "^8.60.0",
     "@vercel/ncc": "^0.38.1",
     "eslint": "^10.4.1",
-    "typescript": "^5.4.0",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.8"
   }
 }
