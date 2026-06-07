@@ -32,6 +32,6 @@
     "@vercel/ncc": "^0.38.1",
     "eslint": "^10.4.1",
     "typescript": "^5.4.0",
-    "vitest": "^1.6.0"
+    "vitest": "^4.1.8"
   }
 }
