@@ -4,7 +4,7 @@
 [![Marketplace](https://img.shields.io/badge/Marketplace-Android%20Vitals%20Issues-blue.svg?logo=github)](https://github.com/marketplace/actions/android-vitals-auto-issue-creator)
 [![v1](https://img.shields.io/badge/tag-v1-green.svg)](https://github.com/FrankBurmo/android-vitals-auto-issue-creator/releases)
 
-Sync crash and ANR errors from Google Play Console to GitHub Issues automatically. This action creates one GitHub issue per unique problem and uses labels for deduplication, ensuring your team stays on top of production issues without manual tracking.
+Sync crash- and ANR-errors from Google Play Console to GitHub Issues automatically. This action creates one GitHub issue per unique problem and uses labels for deduplication, ensuring your team stays on top of production issues without manual tracking.
 
 ## Features
 
