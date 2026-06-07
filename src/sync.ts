@@ -45,7 +45,7 @@ export async function syncApp(
       if (config.closeResolved && issue.isResolved && existingIssue.state === "open") {
         await githubClient.closeIssue(
           existingIssue.number,
-          "Dette problemet er markert som løst i Google Play Console. Lukker issue."
+          "This issue is marked as resolved in Google Play Console. Closing issue."
         );
         closed++;
         core.info(`     Closed issue ${existingIssue.number} for ${issue.id}`);

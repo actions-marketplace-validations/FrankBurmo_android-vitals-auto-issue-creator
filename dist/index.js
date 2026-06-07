@@ -66840,27 +66840,52 @@ class GitHubClient {
     octokit;
     owner;
     repo;
+    existingLabels = null;
     constructor(token, owner, repo) {
         this.octokit = getOctokit(token);
         this.owner = owner;
         this.repo = repo;
     }
+    async loadLabels() {
+        if (this.existingLabels !== null) {
+            return;
+        }
+        this.existingLabels = new Set();
+        let page = 1;
+        const perPage = 100;
+        while (true) {
+            const { data: labels } = await this.octokit.rest.issues.listLabelsForRepo({
+                owner: this.owner,
+                repo: this.repo,
+                per_page: perPage,
+                page: page,
+            });
+            for (const label of labels) {
+                this.existingLabels.add(label.name);
+            }
+            if (labels.length < perPage) {
+                break;
+            }
+            page++;
+        }
+    }
     async ensureLabel(name, color) {
+        await this.loadLabels();
+        if (this.existingLabels.has(name)) {
+            return;
+        }
         try {
-            await this.octokit.rest.issues.getLabel({
+            await this.octokit.rest.issues.createLabel({
                 owner: this.owner,
                 repo: this.repo,
                 name: name,
+                color: color || "d73a4a",
             });
+            this.existingLabels.add(name);
         }
         catch (error) {
-            if (error.status === 404) {
-                await this.octokit.rest.issues.createLabel({
-                    owner: this.owner,
-                    repo: this.repo,
-                    name: name,
-                    color: color || "d73a4a",
-                });
+            if (error.status === 422) {
+                this.existingLabels.add(name);
             }
             else {
                 throw error;
@@ -66886,23 +66911,23 @@ class GitHubClient {
     async createIssue(issue, labels) {
         const title = `[${issue.type}] ${issue.cause} in ${issue.location}`;
         const body = `
-## ${issue.type} registrert i Google Play Console
+## ${issue.type} registered in Google Play Console
 
 | | |
 |---|---|
-| **Årsak** | \`${issue.cause}\` |
-| **Lokasjon** | \`${issue.location}\` |
-| **Berørte brukere** | ${issue.affectedUsers} |
-| **Totale eventer** | ${issue.eventCount} |
-| **Første sett i** | \`${issue.firstSeenVersion}\` |
-| **Sist sett i** | \`${issue.lastSeenVersion}\` |
-| **Pakkenavn** | \`${issue.packageName}\` |
+| **Cause** | \`${issue.cause}\` |
+| **Location** | \`${issue.location}\` |
+| **Affected Users** | ${issue.affectedUsers} |
+| **Total Events** | ${issue.eventCount} |
+| **First Seen In** | \`${issue.firstSeenVersion}\` |
+| **Last Seen In** | \`${issue.lastSeenVersion}\` |
+| **Package Name** | \`${issue.packageName}\` |
 
-[🔗 Åpne i Play Console](${issue.playConsoleUrl})
+[🔗 Open in Play Console](${issue.playConsoleUrl})
 
 ---
-> *Automatisk opprettet av [android-vitals-issues](https://github.com/marketplace/actions/android-vitals-issues)*
-> Play Console problem-ID: \`${issue.id}\`
+> *Automatically created by [android-vitals-issues](https://github.com/marketplace/actions/android-vitals-issues)*
+> Play Console issue ID: \`${issue.id}\`
 `;
         const { data: newIssue } = await this.octokit.rest.issues.create({
             owner: this.owner,
@@ -66962,7 +66987,7 @@ async function syncApp(playClient, githubClient, packageName, config) {
         }
         else {
             if (config.closeResolved && issue.isResolved && existingIssue.state === "open") {
-                await githubClient.closeIssue(existingIssue.number, "Dette problemet er markert som løst i Google Play Console. Lukker issue.");
+                await githubClient.closeIssue(existingIssue.number, "This issue is marked as resolved in Google Play Console. Closing issue.");
                 closed++;
                 info(`     Closed issue ${existingIssue.number} for ${issue.id}`);
             }
