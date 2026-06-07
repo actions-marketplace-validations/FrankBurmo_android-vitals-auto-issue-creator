@@ -1,4 +1,5 @@
-import { google } from "googleapis";
+import { GoogleAuth } from "google-auth-library";
+import { playdeveloperreporting } from "@googleapis/playdeveloperreporting";
 import { ErrorIssue } from "./types.js";
 
 export class PlayReportingClient {
@@ -6,11 +7,11 @@ export class PlayReportingClient {
   private reporting: any;
 
   constructor(serviceAccountJson: object) {
-    this.auth = new google.auth.GoogleAuth({
+    this.auth = new GoogleAuth({
       credentials: serviceAccountJson,
       scopes: ["https://www.googleapis.com/auth/playdeveloperreporting"],
     });
-    this.reporting = google.playdeveloperreporting({
+    this.reporting = playdeveloperreporting({
       version: "v1beta1",
       auth: this.auth,
     });
