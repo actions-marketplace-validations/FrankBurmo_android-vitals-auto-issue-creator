@@ -7,9 +7,6 @@ updates:
     cooldown:
       default-days: 7
     groups:
-      eslint:
-        patterns:
-          - "*eslint*"
       all:
         patterns:
           - "*"
