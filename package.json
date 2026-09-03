@@ -5,10 +5,14 @@
   "private": true,
   "description": "Sync crash and ANR errors from Google Play Console to GitHub Issues",
   "main": "dist/index.js",
+  "workspaces": [
+    "tools/ncc-ts6-shim"
+  ],
   "scripts": {
-    "build": "node --max-old-space-size=4096 node_modules/@vercel/ncc/dist/ncc/cli.js build src/index.ts -o dist --source-map --license licenses.txt",
+    "build": "node scripts/build.mjs",
     "test": "vitest run",
-    "lint": "eslint src tests",
+    "lint": "oxlint src tests",
+    "lint:fix": "oxlint --fix src tests",
     "prepare": "npm run build"
   },
   "keywords": [
@@ -24,16 +28,14 @@
   "dependencies": {
     "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",
-    "@googleapis/playdeveloperreporting": "^10.0.0",
-    "google-auth-library": "^10.9.0"
+    "@googleapis/playdeveloperreporting": "^11.1.0",
+    "google-auth-library": "^11.0.2"
   },
   "devDependencies": {
-    "@types/node": "^26.0.1",
-    "@typescript-eslint/eslint-plugin": "^8.62.0",
-    "@typescript-eslint/parser": "^8.60.0",
-    "@vercel/ncc": "^0.44.0",
-    "eslint": "^10.6.0",
-    "typescript": "^6.0.3",
-    "vitest": "^4.1.9"
+    "@types/node": "^26.2.0",
+    "@vercel/ncc": "^0.45.0",
+    "oxlint": "^1.79.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
   }
 }

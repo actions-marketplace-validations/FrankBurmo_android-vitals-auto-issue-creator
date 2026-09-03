@@ -1048,7 +1048,9 @@ var playdeveloperreporting_v1alpha1;
     playdeveloperreporting_v1alpha1.Resource$Apps = Resource$Apps;
     class Resource$Vitals {
         context;
+        anonrssandswapmemoryusage;
         anrrate;
+        bitmapmemoryusage;
         crashrate;
         errors;
         excessivewakeuprate;
@@ -1058,7 +1060,10 @@ var playdeveloperreporting_v1alpha1;
         stuckbackgroundwakelockrate;
         constructor(context) {
             this.context = context;
+            this.anonrssandswapmemoryusage =
+                new Resource$Vitals$Anonrssandswapmemoryusage(this.context);
             this.anrrate = new Resource$Vitals$Anrrate(this.context);
+            this.bitmapmemoryusage = new Resource$Vitals$Bitmapmemoryusage(this.context);
             this.crashrate = new Resource$Vitals$Crashrate(this.context);
             this.errors = new Resource$Vitals$Errors(this.context);
             this.excessivewakeuprate = new Resource$Vitals$Excessivewakeuprate(this.context);
@@ -1070,6 +1075,77 @@ var playdeveloperreporting_v1alpha1;
         }
     }
     playdeveloperreporting_v1alpha1.Resource$Vitals = Resource$Vitals;
+    class Resource$Vitals$Anonrssandswapmemoryusage {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        query(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha1/{+name}:query').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    playdeveloperreporting_v1alpha1.Resource$Vitals$Anonrssandswapmemoryusage = Resource$Vitals$Anonrssandswapmemoryusage;
     class Resource$Vitals$Anrrate {
         context;
         constructor(context) {
@@ -1141,6 +1217,77 @@ var playdeveloperreporting_v1alpha1;
         }
     }
     playdeveloperreporting_v1alpha1.Resource$Vitals$Anrrate = Resource$Vitals$Anrrate;
+    class Resource$Vitals$Bitmapmemoryusage {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        query(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1alpha1/{+name}:query').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    playdeveloperreporting_v1alpha1.Resource$Vitals$Bitmapmemoryusage = Resource$Vitals$Bitmapmemoryusage;
     class Resource$Vitals$Crashrate {
         context;
         constructor(context) {
@@ -1897,7 +2044,9 @@ var playdeveloperreporting_v1beta1;
     playdeveloperreporting_v1beta1.Resource$Apps = Resource$Apps;
     class Resource$Vitals {
         context;
+        anonrssandswapmemoryusage;
         anrrate;
+        bitmapmemoryusage;
         crashrate;
         errors;
         excessivewakeuprate;
@@ -1907,7 +2056,10 @@ var playdeveloperreporting_v1beta1;
         stuckbackgroundwakelockrate;
         constructor(context) {
             this.context = context;
+            this.anonrssandswapmemoryusage =
+                new Resource$Vitals$Anonrssandswapmemoryusage(this.context);
             this.anrrate = new Resource$Vitals$Anrrate(this.context);
+            this.bitmapmemoryusage = new Resource$Vitals$Bitmapmemoryusage(this.context);
             this.crashrate = new Resource$Vitals$Crashrate(this.context);
             this.errors = new Resource$Vitals$Errors(this.context);
             this.excessivewakeuprate = new Resource$Vitals$Excessivewakeuprate(this.context);
@@ -1919,6 +2071,77 @@ var playdeveloperreporting_v1beta1;
         }
     }
     playdeveloperreporting_v1beta1.Resource$Vitals = Resource$Vitals;
+    class Resource$Vitals$Anonrssandswapmemoryusage {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1beta1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        query(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1beta1/{+name}:query').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    playdeveloperreporting_v1beta1.Resource$Vitals$Anonrssandswapmemoryusage = Resource$Vitals$Anonrssandswapmemoryusage;
     class Resource$Vitals$Anrrate {
         context;
         constructor(context) {
@@ -1990,6 +2213,77 @@ var playdeveloperreporting_v1beta1;
         }
     }
     playdeveloperreporting_v1beta1.Resource$Vitals$Anrrate = Resource$Vitals$Anrrate;
+    class Resource$Vitals$Bitmapmemoryusage {
+        context;
+        constructor(context) {
+            this.context = context;
+        }
+        get(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1beta1/{+name}').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'GET',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+        query(paramsOrCallback, optionsOrCallback, callback) {
+            let params = (paramsOrCallback ||
+                {});
+            let options = (optionsOrCallback || {});
+            if (typeof paramsOrCallback === 'function') {
+                callback = paramsOrCallback;
+                params = {};
+                options = {};
+            }
+            if (typeof optionsOrCallback === 'function') {
+                callback = optionsOrCallback;
+                options = {};
+            }
+            const rootUrl = options.rootUrl || 'https://playdeveloperreporting.googleapis.com/';
+            const parameters = {
+                options: Object.assign({
+                    url: (rootUrl + '/v1beta1/{+name}:query').replace(/([^:]\/)\/+/g, '$1'),
+                    method: 'POST',
+                    apiVersion: '',
+                }, options),
+                params,
+                requiredParams: ['name'],
+                pathParams: ['name'],
+                context: this.context,
+            };
+            if (callback) {
+                (0, googleapis_common_1.createAPIRequest)(parameters, callback);
+            }
+            else {
+                return (0, googleapis_common_1.createAPIRequest)(parameters);
+            }
+        }
+    }
+    playdeveloperreporting_v1beta1.Resource$Vitals$Bitmapmemoryusage = Resource$Vitals$Bitmapmemoryusage;
     class Resource$Vitals$Crashrate {
         context;
         constructor(context) {
@@ -8017,7 +8311,7 @@ exports.AuthClient = exports.DEFAULT_EAGER_REFRESH_THRESHOLD_MILLIS = exports.DE
 const events_1 = __nccwpck_require__(4434);
 const gaxios_1 = __nccwpck_require__(7842);
 const util_1 = __nccwpck_require__(7870);
-const google_logging_utils_1 = __nccwpck_require__(1577);
+const google_logging_utils_1 = __nccwpck_require__(7235);
 const shared_cjs_1 = __nccwpck_require__(5470);
 /**
  * The default cloud universe
@@ -9398,7 +9692,7 @@ exports.CertificateSubjectTokenSupplier = CertificateSubjectTokenSupplier;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Compute = void 0;
 const gaxios_1 = __nccwpck_require__(7842);
-const gcpMetadata = __nccwpck_require__(9595);
+const gcpMetadata = __nccwpck_require__(7027);
 const oauth2client_1 = __nccwpck_require__(91);
 class Compute extends oauth2client_1.OAuth2Client {
     serviceAccountEmail;
@@ -10007,7 +10301,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.GCPEnv = void 0;
 exports.clear = clear;
 exports.getEnv = getEnv;
-const gcpMetadata = __nccwpck_require__(9595);
+const gcpMetadata = __nccwpck_require__(7027);
 var GCPEnv;
 (function (GCPEnv) {
     GCPEnv["APP_ENGINE"] = "APP_ENGINE";
@@ -11011,7 +11305,7 @@ exports.GoogleAuth = exports.GoogleAuthExceptionMessages = void 0;
 const child_process_1 = __nccwpck_require__(5317);
 const fs = __nccwpck_require__(9896);
 const gaxios_1 = __nccwpck_require__(7842);
-const gcpMetadata = __nccwpck_require__(9595);
+const gcpMetadata = __nccwpck_require__(7027);
 const os = __nccwpck_require__(857);
 const path = __nccwpck_require__(6928);
 const crypto_1 = __nccwpck_require__(8851);
@@ -11313,7 +11607,7 @@ class GoogleAuth {
             return null;
         }
         try {
-            return this._getApplicationCredentialsFromFilePath(credentialsPath, options);
+            return await this._getApplicationCredentialsFromFilePath(credentialsPath, options);
         }
         catch (e) {
             if (e instanceof Error) {
@@ -11328,28 +11622,33 @@ class GoogleAuth {
      * @api private
      */
     async _tryGetApplicationCredentialsFromWellKnownFile(options) {
-        // First, figure out the location of the file, depending upon the OS type.
-        let location = null;
-        if (this._isWindows()) {
-            // Windows
-            location = process.env['APPDATA'];
-        }
-        else {
-            // Linux or Mac
-            const home = process.env['HOME'];
-            if (home) {
-                location = path.join(home, '.config');
+        // First, figure out the location of the Cloud SDK config directory. The
+        // `CLOUDSDK_CONFIG` environment variable overrides the platform-specific
+        // default location; when it is set, `gcloud` stores the application default
+        // credentials file there, so it takes precedence.
+        let configDir = process.env['CLOUDSDK_CONFIG'];
+        if (!configDir) {
+            if (this._isWindows()) {
+                // Windows
+                if (process.env['APPDATA']) {
+                    configDir = path.join(process.env['APPDATA'], 'gcloud');
+                }
+            }
+            else {
+                // Linux or Mac
+                const home = process.env['HOME'];
+                if (home) {
+                    configDir = path.join(home, '.config', 'gcloud');
+                }
             }
         }
-        // If we found the root path, expand it.
-        if (location) {
-            location = path.join(location, 'gcloud', 'application_default_credentials.json');
-            if (!fs.existsSync(location)) {
-                location = null;
-            }
+        // The config directory could not be determined.
+        if (!configDir) {
+            return null;
         }
+        const location = path.join(configDir, 'application_default_credentials.json');
         // The file does not exist.
-        if (!location) {
+        if (!fs.existsSync(location)) {
             return null;
         }
         // The file seems to exist. Try to use it.
@@ -15729,7 +16028,7 @@ const googleauth_1 = __nccwpck_require__(5934);
 Object.defineProperty(exports, "GoogleAuth", ({ enumerable: true, get: function () { return googleauth_1.GoogleAuth; } }));
 // Export common deps to ensure types/instances are the exact match. Useful
 // for consistently configuring the library across versions.
-exports.gcpMetadata = __nccwpck_require__(9595);
+exports.gcpMetadata = __nccwpck_require__(7027);
 exports.gaxios = __nccwpck_require__(7842);
 var authclient_1 = __nccwpck_require__(4810);
 Object.defineProperty(exports, "AuthClient", ({ enumerable: true, get: function () { return authclient_1.AuthClient; } }));
@@ -15965,6 +16264,572 @@ function _isWindows() {
     return os.platform().startsWith('win');
 }
 //# sourceMappingURL=util.js.map
+
+/***/ }),
+
+/***/ 7678:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+// Copyright 2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Colours = void 0;
+/**
+ * Handles figuring out if we can use ANSI colours and handing out the escape codes.
+ *
+ * This is for package-internal use only, and may change at any time.
+ *
+ * @private
+ * @internal
+ */
+class Colours {
+    static enabled = false;
+    static reset = '';
+    static bright = '';
+    static dim = '';
+    static red = '';
+    static green = '';
+    static yellow = '';
+    static blue = '';
+    static magenta = '';
+    static cyan = '';
+    static white = '';
+    static grey = '';
+    /**
+     * @param stream The stream (e.g. process.stderr)
+     * @returns true if the stream should have colourization enabled
+     */
+    static isEnabled(stream) {
+        return (stream && // May happen in browsers.
+            stream.isTTY &&
+            (typeof stream.getColorDepth === 'function'
+                ? stream.getColorDepth() > 2
+                : true));
+    }
+    static refresh() {
+        Colours.enabled = Colours.isEnabled(process?.stderr);
+        if (!this.enabled) {
+            Colours.reset = '';
+            Colours.bright = '';
+            Colours.dim = '';
+            Colours.red = '';
+            Colours.green = '';
+            Colours.yellow = '';
+            Colours.blue = '';
+            Colours.magenta = '';
+            Colours.cyan = '';
+            Colours.white = '';
+            Colours.grey = '';
+        }
+        else {
+            Colours.reset = '\u001b[0m';
+            Colours.bright = '\u001b[1m';
+            Colours.dim = '\u001b[2m';
+            Colours.red = '\u001b[31m';
+            Colours.green = '\u001b[32m';
+            Colours.yellow = '\u001b[33m';
+            Colours.blue = '\u001b[34m';
+            Colours.magenta = '\u001b[35m';
+            Colours.cyan = '\u001b[36m';
+            Colours.white = '\u001b[37m';
+            Colours.grey = '\u001b[90m';
+        }
+    }
+}
+exports.Colours = Colours;
+Colours.refresh();
+//# sourceMappingURL=colours.js.map
+
+/***/ }),
+
+/***/ 7235:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+
+// Copyright 2021-2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+__exportStar(__nccwpck_require__(4426), exports);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
+/***/ 4426:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+
+// Copyright 2021-2024 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     https://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.env = exports.DebugLogBackendBase = exports.placeholder = exports.AdhocDebugLogger = void 0;
+exports.getNodeBackend = getNodeBackend;
+exports.getDebugBackend = getDebugBackend;
+exports.getStructuredBackend = getStructuredBackend;
+exports.setBackend = setBackend;
+exports.log = log;
+const events_1 = __nccwpck_require__(4434);
+const process = __importStar(__nccwpck_require__(932));
+const util = __importStar(__nccwpck_require__(9023));
+const colours_1 = __nccwpck_require__(7678);
+const types_1 = __nccwpck_require__(7218);
+// Some functions (as noted) are based on the Node standard library, from
+// the following file:
+//
+// https://github.com/nodejs/node/blob/main/lib/internal/util/debuglog.js
+// NOTE: The previous 'export declare interface AdhocDebugLogger' was correctly removed.
+/**
+ * Our logger instance. This actually contains the meat of dealing
+ * with log lines, including EventEmitter. This contains the function
+ * that will be passed back to users of the package.
+ */
+class AdhocDebugLogger extends events_1.EventEmitter {
+    // Our namespace (system/subsystem/etc)
+    namespace;
+    // The function we'll call with new log lines.
+    // Should be built in Node util stuff, or the "debug" package, or whatever.
+    upstream;
+    // Self-referential function wrapper that calls invoke() on us.
+    func;
+    /**
+     * @param upstream The backend will pass a function that will be
+     * called whenever our logger function is invoked.
+     */
+    constructor(namespace, upstream) {
+        super();
+        this.namespace = namespace;
+        this.upstream = upstream;
+        this.func = Object.assign(this.invoke.bind(this), {
+            // Also add an instance pointer back to us.
+            instance: this,
+            // And pull over the EventEmitter functionality.
+            on: (event, listener) => this.on(event, listener),
+        });
+        // Convenience methods for log levels.
+        this.func.debug = (...args) => this.invokeSeverity(types_1.LogSeverity.DEBUG, ...args);
+        this.func.info = (...args) => this.invokeSeverity(types_1.LogSeverity.INFO, ...args);
+        this.func.warn = (...args) => this.invokeSeverity(types_1.LogSeverity.WARNING, ...args);
+        this.func.error = (...args) => this.invokeSeverity(types_1.LogSeverity.ERROR, ...args);
+        this.func.sublog = (namespace) => log(namespace, this.func);
+    }
+    invoke(fields, ...args) {
+        // Push out any upstream logger first.
+        if (this.upstream) {
+            try {
+                this.upstream(fields, ...args);
+            }
+            catch (e) {
+                // Swallow exceptions to avoid interfering with other logging.
+            }
+        }
+        // Emit sink events.
+        try {
+            this.emit('log', fields, args);
+        }
+        catch (e) {
+            // Swallow exceptions to avoid interfering with other logging.
+        }
+    }
+    invokeSeverity(severity, ...args) {
+        this.invoke({ severity }, ...args);
+    }
+}
+exports.AdhocDebugLogger = AdhocDebugLogger;
+/**
+ * This can be used in place of a real logger while waiting for Promises or disabling logging.
+ */
+exports.placeholder = new AdhocDebugLogger('', () => { }).func;
+// 🌟 REMOVED: AdhocDebugLogCallable, AdhocDebugLogFunction, DebugLogBackend declarations
+/**
+ * The base class for debug logging backends. It's possible to use this, but the
+ * same non-guarantees above still apply (unstable interface, etc).
+ *
+ * @private
+ * @internal
+ */
+class DebugLogBackendBase {
+    cached = new Map();
+    filters = [];
+    filtersSet = false;
+    constructor() {
+        // Look for the Node config variable for what systems to enable. We'll store
+        // these for the log method below, which will call setFilters() once.
+        let nodeFlag = process.env[exports.env.nodeEnables] ?? '*';
+        if (nodeFlag === 'all') {
+            nodeFlag = '*';
+        }
+        this.filters = nodeFlag.split(',');
+    }
+    log(namespace, fields, ...args) {
+        try {
+            if (!this.filtersSet) {
+                this.setFilters();
+                this.filtersSet = true;
+            }
+            let logger = this.cached.get(namespace);
+            if (!logger) {
+                logger = this.makeLogger(namespace);
+                this.cached.set(namespace, logger);
+            }
+            logger(fields, ...args);
+        }
+        catch (e) {
+            // Silently ignore all errors; we don't want them to interfere with
+            // the user's running app.
+            // e;
+            console.error(e);
+        }
+    }
+}
+exports.DebugLogBackendBase = DebugLogBackendBase;
+// The basic backend. This one definitely works, but it's less feature-filled.
+//
+// Rather than using util.debuglog, this implements the same basic logic directly.
+// The reason for this decision is that debuglog checks the value of the
+// NODE_DEBUG environment variable before any user code runs; we therefore
+// can't pipe our own enables into it (and util.debuglog will never print unless
+// the user duplicates it into NODE_DEBUG, which isn't reasonable).
+//
+class NodeBackend extends DebugLogBackendBase {
+    // Default to allowing all systems, since we gate earlier based on whether the
+    // variable is empty.
+    enabledRegexp = /.*/g;
+    isEnabled(namespace) {
+        return this.enabledRegexp.test(namespace);
+    }
+    makeLogger(namespace) {
+        if (!this.enabledRegexp.test(namespace)) {
+            return () => { };
+        }
+        return (fields, ...args) => {
+            // TODO: `fields` needs to be turned into a string here, one way or another.
+            const nscolour = `${colours_1.Colours.green}${namespace}${colours_1.Colours.reset}`;
+            const pid = `${colours_1.Colours.yellow}${process.pid}${colours_1.Colours.reset}`;
+            let level;
+            switch (fields.severity) {
+                case types_1.LogSeverity.ERROR:
+                    level = `${colours_1.Colours.red}${fields.severity}${colours_1.Colours.reset}`;
+                    break;
+                case types_1.LogSeverity.INFO:
+                    level = `${colours_1.Colours.magenta}${fields.severity}${colours_1.Colours.reset}`;
+                    break;
+                case types_1.LogSeverity.WARNING:
+                    level = `${colours_1.Colours.yellow}${fields.severity}${colours_1.Colours.reset}`;
+                    break;
+                default:
+                    level = fields.severity ?? types_1.LogSeverity.DEFAULT;
+                    break;
+            }
+            const msg = util.formatWithOptions({ colors: colours_1.Colours.enabled }, ...args);
+            const filteredFields = Object.assign({}, fields);
+            delete filteredFields.severity;
+            const fieldsJson = Object.getOwnPropertyNames(filteredFields).length
+                ? JSON.stringify(filteredFields)
+                : '';
+            const fieldsColour = fieldsJson
+                ? `${colours_1.Colours.grey}${fieldsJson}${colours_1.Colours.reset}`
+                : '';
+            console.error('%s [%s|%s] %s%s', pid, nscolour, level, msg, fieldsJson ? ` ${fieldsColour}` : '');
+        };
+    }
+    // Regexp patterns below are from here:
+    // https://github.com/nodejs/node/blob/c0aebed4b3395bd65d54b18d1fd00f071002ac20/lib/internal/util/debuglog.js#L36
+    setFilters() {
+        const totalFilters = this.filters.join(',');
+        const regexp = totalFilters
+            .replace(/[|\\{}()[\]^$+?.]/g, '\\$&')
+            .replace(/\*/g, '.*')
+            .replace(/,/g, '$|^');
+        this.enabledRegexp = new RegExp(`^${regexp}$`, 'i');
+    }
+}
+/**
+ * @returns A backend based on Node util.debuglog; this is the default.
+ */
+function getNodeBackend() {
+    return new NodeBackend();
+}
+class DebugBackend extends DebugLogBackendBase {
+    debugPkg;
+    constructor(pkg) {
+        super();
+        this.debugPkg = pkg;
+    }
+    makeLogger(namespace) {
+        const debugLogger = this.debugPkg(namespace);
+        return (fields, ...args) => {
+            // TODO: `fields` needs to be turned into a string here.
+            debugLogger(args[0], ...args.slice(1));
+        };
+    }
+    setFilters() {
+        const existingFilters = process.env['NODE_DEBUG'] ?? '';
+        process.env['NODE_DEBUG'] = `${existingFilters}${existingFilters ? ',' : ''}${this.filters.join(',')}`;
+    }
+}
+/**
+ * Creates a "debug" package backend. The user must call require('debug') and pass
+ * the resulting object to this function.
+ *
+ * ```
+ *  setBackend(getDebugBackend(require('debug')))
+ * ```
+ *
+ * https://www.npmjs.com/package/debug
+ *
+ * Note: Google does not explicitly endorse or recommend this package; it's just
+ * being provided as an option.
+ *
+ * @returns A backend based on the npm "debug" package.
+ */
+function getDebugBackend(debugPkg) {
+    return new DebugBackend(debugPkg);
+}
+/**
+ * This pretty much works like the Node logger, but it outputs structured
+ * logging JSON matching Google Cloud's ingestion specs. Rather than handling
+ * its own output, it wraps another backend. The passed backend must be a subclass
+ * of `DebugLogBackendBase` (any of the backends exposed by this package will work).
+ */
+class StructuredBackend extends DebugLogBackendBase {
+    upstream;
+    constructor(upstream) {
+        super();
+        this.upstream = upstream ?? undefined;
+    }
+    makeLogger(namespace) {
+        const debugLogger = this.upstream?.makeLogger(namespace);
+        return (fields, ...args) => {
+            const severity = fields.severity ?? types_1.LogSeverity.INFO;
+            const json = Object.assign({
+                severity,
+                message: util.format(...args),
+            }, fields);
+            const jsonString = JSON.stringify(json);
+            if (debugLogger) {
+                debugLogger(fields, jsonString);
+            }
+            else {
+                console.log('%s', jsonString);
+            }
+        };
+    }
+    setFilters() {
+        this.upstream?.setFilters();
+    }
+}
+/**
+ * Creates a "structured logging" backend. This pretty much works like the
+ * Node logger, but it outputs structured logging JSON matching Google
+ * Cloud's ingestion specs instead of plain text.
+ *
+ * ```
+ *  setBackend(getStructuredBackend())
+ * ```
+ *
+ * @param upstream If you want to use something besides the Node backend to
+ *   write the actual log lines into, pass that here.
+ * @returns A backend based on Google Cloud structured logging.
+ */
+function getStructuredBackend(upstream) {
+    return new StructuredBackend(upstream);
+}
+/**
+ * The environment variables that we standardized on, for all ad-hoc logging.
+ */
+exports.env = {
+    /**
+     * Filter wildcards specific to the Node syntax, and similar to the built-in
+     * utils.debuglog() environment variable. If missing, disables logging.
+     */
+    nodeEnables: 'GOOGLE_SDK_NODE_LOGGING',
+};
+// Keep a copy of all namespaced loggers so users can reliably .on() them.
+// Note that these cached functions will need to deal with changes in the backend.
+const loggerCache = new Map();
+// Our current global backend. This might be:
+let cachedBackend = undefined;
+/**
+ * Set the backend to use for our log output.
+ * - A backend object
+ * - null to disable logging
+ * - undefined for "nothing yet", defaults to the Node backend
+ *
+ * @param backend Results from one of the get*Backend() functions.
+ */
+function setBackend(backend) {
+    cachedBackend = backend;
+    loggerCache.clear();
+}
+/**
+ * Creates a logging function. Multiple calls to this with the same namespace
+ * will produce the same logger, with the same event emitter hooks.
+ *
+ * Namespaces can be a simple string ("system" name), or a qualified string
+ * (system:subsystem), which can be used for filtering, or for "system:*".
+ *
+ * @param namespace The namespace, a descriptive text string.
+ * @returns A function you can call that works similar to console.log().
+ */
+function log(namespace, parent) {
+    // If the enable environment variable isn't set, do nothing. The user
+    // can still choose to set a backend of their choice using the manual
+    // `setBackend()`.
+    if (!cachedBackend) {
+        const enablesFlag = process.env[exports.env.nodeEnables];
+        if (!enablesFlag) {
+            return exports.placeholder;
+        }
+    }
+    // This might happen mostly if the typings are dropped in a user's code,
+    // or if they're calling from JavaScript.
+    if (!namespace) {
+        return exports.placeholder;
+    }
+    // Handle sub-loggers.
+    if (parent) {
+        namespace = `${parent.instance.namespace}:${namespace}`;
+    }
+    // Reuse loggers so things like event sinks are persistent.
+    const existing = loggerCache.get(namespace);
+    if (existing) {
+        return existing.func;
+    }
+    // Do we have a backend yet?
+    if (cachedBackend === null) {
+        // Explicitly disabled.
+        return exports.placeholder;
+    }
+    else if (cachedBackend === undefined) {
+        // One hasn't been made yet, so default to Node.
+        cachedBackend = getNodeBackend();
+    }
+    // The logger is further wrapped so we can handle the backend changing out.
+    const logger = (() => {
+        let previousBackend = undefined;
+        const newLogger = new AdhocDebugLogger(namespace, (fields, ...args) => {
+            if (previousBackend !== cachedBackend) {
+                // Did the user pass a custom backend?
+                if (cachedBackend === null) {
+                    // Explicitly disabled.
+                    return;
+                }
+                else if (cachedBackend === undefined) {
+                    // One hasn't been made yet, so default to Node.
+                    cachedBackend = getNodeBackend();
+                }
+                previousBackend = cachedBackend;
+            }
+            cachedBackend?.log(namespace, fields, ...args);
+        });
+        return newLogger;
+    })();
+    loggerCache.set(namespace, logger);
+    return logger.func;
+}
+//# sourceMappingURL=logging-utils.js.map
+
+/***/ }),
+
+/***/ 7218:
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.LogSeverity = void 0;
+/**
+ * Possible log levels. These are a subset of Cloud Observability levels.
+ * https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry#LogSeverity
+ */
+var LogSeverity;
+(function (LogSeverity) {
+    LogSeverity["DEFAULT"] = "DEFAULT";
+    LogSeverity["DEBUG"] = "DEBUG";
+    LogSeverity["INFO"] = "INFO";
+    LogSeverity["WARNING"] = "WARNING";
+    LogSeverity["ERROR"] = "ERROR";
+})(LogSeverity || (exports.LogSeverity = LogSeverity = {}));
+//# sourceMappingURL=types.js.map
 
 /***/ }),
 
@@ -32995,7 +33860,13 @@ function processHeader (request, key, val) {
       } else if (typeof val[i] === 'object') {
         throw new InvalidArgumentError(`invalid ${key} header`)
       } else {
-        arr.push(`${val[i]}`)
+        // Coerce primitives (and reject unsafe coercions such as functions
+        // with a crafted toString/Symbol.toPrimitive).
+        const str = `${val[i]}`
+        if (!isValidHeaderValue(str)) {
+          throw new InvalidArgumentError(`invalid ${key} header`)
+        }
+        arr.push(str)
       }
     }
     val = arr
@@ -33006,7 +33877,12 @@ function processHeader (request, key, val) {
   } else if (val === null) {
     val = ''
   } else {
+    // Coerce primitives (and reject unsafe coercions such as functions
+    // with a crafted toString/Symbol.toPrimitive).
     val = `${val}`
+    if (!isValidHeaderValue(val)) {
+      throw new InvalidArgumentError(`invalid ${key} header`)
+    }
   }
 
   if (headerName === 'host') {
@@ -34378,6 +35254,7 @@ const {
   RequestContentLengthMismatchError,
   ResponseContentLengthMismatchError,
   RequestAbortedError,
+  InvalidArgumentError,
   HeadersTimeoutError,
   HeadersOverflowError,
   SocketError,
@@ -35361,8 +36238,16 @@ function writeH1 (client, request) {
     }
     body = bodyStream.stream
     contentLength = bodyStream.length
-  } else if (util.isBlobLike(body) && request.contentType == null && body.type) {
-    headers.push('content-type', body.type)
+  } else if (util.isBlobLike(body) && request.contentType == null) {
+    const contentType = body.type
+    if (contentType) {
+      const contentTypeValue = `${contentType}`
+      if (!util.isValidHeaderValue(contentTypeValue)) {
+        util.errorRequest(client, request, new InvalidArgumentError('invalid content-type header'))
+        return false
+      }
+      headers.push('content-type', contentTypeValue)
+    }
   }
 
   if (body && typeof body.read === 'function') {
@@ -38835,6 +39720,28 @@ function calculateRetryAfterHeader (retryAfter) {
   return new Date(retryAfter).getTime() - current
 }
 
+function validatePartialResponseContentLength (headers, range, statusCode, retryCount) {
+  const contentLength = headers['content-length']
+  if (contentLength == null) {
+    return null
+  }
+
+  if (!Number.isFinite(range.start) || !Number.isFinite(range.end)) {
+    return null
+  }
+
+  const length = Number(contentLength)
+  const expectedLength = range.end - range.start + 1
+  if (!Number.isFinite(length) || length !== expectedLength) {
+    return new RequestRetryError('Content-Length mismatch', statusCode, {
+      headers,
+      data: { count: retryCount }
+    })
+  }
+
+  return null
+}
+
 class RetryHandler {
   constructor (opts, handlers) {
     const { retryOptions, ...dispatchOpts } = opts
@@ -39049,6 +39956,12 @@ class RetryHandler {
         return false
       }
 
+      const contentLengthError = validatePartialResponseContentLength(headers, contentRange, statusCode, this.retryCount)
+      if (contentLengthError != null) {
+        this.abort(contentLengthError)
+        return false
+      }
+
       const { start, size, end = size - 1 } = contentRange
 
       assert(this.start === start, 'content-range mismatch')
@@ -39070,6 +39983,12 @@ class RetryHandler {
             resume,
             statusMessage
           )
+        }
+
+        const contentLengthError = validatePartialResponseContentLength(headers, range, statusCode, this.retryCount)
+        if (contentLengthError != null) {
+          this.abort(contentLengthError)
+          return false
         }
 
         const { start, size, end = size - 1 } = range
@@ -43316,7 +44235,7 @@ function validateCookiePath (path) {
 
     if (
       code < 0x20 || // exclude CTLs (0-31)
-      code === 0x7F || // DEL
+      code > 0x7E || // exclude DEL and non-ascii
       code === 0x3B // ;
     ) {
       throw new Error('Invalid cookie path')
@@ -43325,16 +44244,80 @@ function validateCookiePath (path) {
 }
 
 /**
- * I have no idea why these values aren't allowed to be honest,
- * but Deno tests these. - Khafra
+ * <let-dig> ::= <letter> | <digit>
+ *
+ * <letter> ::= any one of the 52 alphabetic characters A through Z in
+ * upper case and a through z in lower case
+ *
+ * <digit> ::= any one of the ten digits 0 through 9r
+ *
+ * @see https://www.rfc-editor.org/rfc/rfc1034#section-3.5
+ * @param {number} code
+ */
+function isLetterOrDigit (code) {
+  return (
+    (code >= 0x30 && code <= 0x39) || // 0-9
+    (code >= 0x41 && code <= 0x5A) || // A-Z
+    (code >= 0x61 && code <= 0x7A) // a-z
+  )
+}
+
+/**
+ * Validates a cookie domain against the "preferred name syntax".
+ *
+ * <domain>      ::= <subdomain> | " "
+ * <subdomain>   ::= <label> | <subdomain> "." <label>
+ * <label>       ::= <let-dig> [ [ <ldh-str> ] <let-dig> ]
+ * <ldh-str>     ::= <let-dig-hyp> | <let-dig-hyp> <ldh-str>
+ * <let-dig-hyp> ::= <let-dig> | "-"
+ *
+ * @see https://www.rfc-editor.org/rfc/rfc1034#section-3.5
+ * @see https://www.rfc-editor.org/rfc/rfc1123#section-2.1
+ * @see https://www.rfc-editor.org/rfc/rfc1035#section-2.3.4
  * @param {string} domain
  */
 function validateCookieDomain (domain) {
-  if (
-    domain.startsWith('-') ||
-    domain.endsWith('.') ||
-    domain.endsWith('-')
-  ) {
+  // <domain> ::= <subdomain> | " "
+  if (domain === ' ') {
+    return
+  }
+
+  if (domain.length > 255) {
+    throw new Error('Invalid cookie domain')
+  }
+
+  let labelLength = 0
+
+  for (let i = 0; i < domain.length; ++i) {
+    const code = domain.charCodeAt(i)
+
+    if (code === 0x2E) {
+      if (labelLength === 0) {
+        throw new Error('Invalid cookie domain')
+      }
+
+      if (domain.charCodeAt(i - 1) === 0x2D) { // "-"
+        throw new Error('Invalid cookie domain')
+      }
+
+      labelLength = 0
+      continue
+    }
+
+    if (labelLength === 0 && !isLetterOrDigit(code)) {
+      throw new Error('Invalid cookie domain')
+    }
+
+    if (!isLetterOrDigit(code) && code !== 0x2D) { // "-"
+      throw new Error('Invalid cookie domain')
+    }
+
+    if (++labelLength > 63) {
+      throw new Error('Invalid cookie domain')
+    }
+  }
+
+  if (labelLength === 0 || domain.charCodeAt(domain.length - 1) === 0x2D) { // "-"
     throw new Error('Invalid cookie domain')
   }
 }
@@ -43477,7 +44460,13 @@ function stringify (cookie) {
 
     const [key, ...value] = part.split('=')
 
-    out.push(`${key.trim()}=${value.join('=')}`)
+    const trimmedKey = key.trim()
+    const joinedValue = value.join('=')
+
+    validateCookieName(trimmedKey)
+    validateCookieValue(joinedValue)
+
+    out.push(`${trimmedKey}=${joinedValue}`)
   }
 
   return out.join('; ')
@@ -58768,6 +59757,553 @@ __exportStar(__nccwpck_require__(6128), exports);
 
 /***/ }),
 
+/***/ 4888:
+/***/ ((__unused_webpack_module, exports, __nccwpck_require__) => {
+
+
+/**
+ * Copyright 2022 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.GCE_LINUX_BIOS_PATHS = void 0;
+exports.isGoogleCloudServerless = isGoogleCloudServerless;
+exports.isGoogleComputeEngineLinux = isGoogleComputeEngineLinux;
+exports.isGoogleComputeEngineMACAddress = isGoogleComputeEngineMACAddress;
+exports.isGoogleComputeEngine = isGoogleComputeEngine;
+exports.detectGCPResidency = detectGCPResidency;
+const fs_1 = __nccwpck_require__(9896);
+const os_1 = __nccwpck_require__(857);
+/**
+ * Known paths unique to Google Compute Engine Linux instances
+ */
+exports.GCE_LINUX_BIOS_PATHS = {
+    BIOS_DATE: '/sys/class/dmi/id/bios_date',
+    BIOS_VENDOR: '/sys/class/dmi/id/bios_vendor',
+};
+const GCE_MAC_ADDRESS_REGEX = /^42:01/;
+/**
+ * Determines if the process is running on a Google Cloud Serverless environment (Cloud Run or Cloud Functions instance).
+ *
+ * Uses the:
+ * - {@link https://cloud.google.com/run/docs/container-contract#env-vars Cloud Run environment variables}.
+ * - {@link https://cloud.google.com/functions/docs/env-var Cloud Functions environment variables}.
+ *
+ * @returns {boolean} `true` if the process is running on GCP serverless, `false` otherwise.
+ */
+function isGoogleCloudServerless() {
+    /**
+     * `CLOUD_RUN_JOB` is used for Cloud Run Jobs
+     * - See {@link https://cloud.google.com/run/docs/container-contract#env-vars Cloud Run environment variables}.
+     *
+     * `FUNCTION_NAME` is used in older Cloud Functions environments:
+     * - See {@link https://cloud.google.com/functions/docs/env-var Python 3.7 and Go 1.11}.
+     *
+     * `K_SERVICE` is used in Cloud Run and newer Cloud Functions environments:
+     * - See {@link https://cloud.google.com/run/docs/container-contract#env-vars Cloud Run environment variables}.
+     * - See {@link https://cloud.google.com/functions/docs/env-var Cloud Functions newer runtimes}.
+     */
+    const isGFEnvironment = process.env.CLOUD_RUN_JOB ||
+        process.env.FUNCTION_NAME ||
+        process.env.K_SERVICE;
+    return !!isGFEnvironment;
+}
+/**
+ * Determines if the process is running on a Linux Google Compute Engine instance.
+ *
+ * @returns {boolean} `true` if the process is running on Linux GCE, `false` otherwise.
+ */
+function isGoogleComputeEngineLinux() {
+    if ((0, os_1.platform)() !== 'linux')
+        return false;
+    try {
+        // ensure this file exist
+        (0, fs_1.statSync)(exports.GCE_LINUX_BIOS_PATHS.BIOS_DATE);
+        // ensure this file exist and matches
+        const biosVendor = (0, fs_1.readFileSync)(exports.GCE_LINUX_BIOS_PATHS.BIOS_VENDOR, 'utf8');
+        return /Google/.test(biosVendor);
+    }
+    catch {
+        return false;
+    }
+}
+/**
+ * Determines if the process is running on a Google Compute Engine instance with a known
+ * MAC address.
+ *
+ * @returns {boolean} `true` if the process is running on GCE (as determined by MAC address), `false` otherwise.
+ */
+function isGoogleComputeEngineMACAddress() {
+    const interfaces = (0, os_1.networkInterfaces)();
+    for (const item of Object.values(interfaces)) {
+        if (!item)
+            continue;
+        for (const { mac } of item) {
+            if (GCE_MAC_ADDRESS_REGEX.test(mac)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+/**
+ * Determines if the process is running on a Google Compute Engine instance.
+ *
+ * @returns {boolean} `true` if the process is running on GCE, `false` otherwise.
+ */
+function isGoogleComputeEngine() {
+    return isGoogleComputeEngineLinux() || isGoogleComputeEngineMACAddress();
+}
+/**
+ * Determines if the process is running on Google Cloud Platform.
+ *
+ * @returns {boolean} `true` if the process is running on GCP, `false` otherwise.
+ */
+function detectGCPResidency() {
+    return isGoogleCloudServerless() || isGoogleComputeEngine();
+}
+//# sourceMappingURL=gcp-residency.js.map
+
+/***/ }),
+
+/***/ 7027:
+/***/ (function(__unused_webpack_module, exports, __nccwpck_require__) {
+
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || (function () {
+    var ownKeys = function(o) {
+        ownKeys = Object.getOwnPropertyNames || function (o) {
+            var ar = [];
+            for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k)) ar[ar.length] = k;
+            return ar;
+        };
+        return ownKeys(o);
+    };
+    return function (mod) {
+        if (mod && mod.__esModule) return mod;
+        var result = {};
+        if (mod != null) for (var k = ownKeys(mod), i = 0; i < k.length; i++) if (k[i] !== "default") __createBinding(result, mod, k[i]);
+        __setModuleDefault(result, mod);
+        return result;
+    };
+})();
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.gcpResidencyCache = exports.METADATA_SERVER_DETECTION = exports.HEADERS = exports.HEADER_VALUE = exports.HEADER_NAME = exports.SECONDARY_HOST_ADDRESS = exports.HOST_ADDRESS = exports.BASE_PATH = void 0;
+exports.instance = instance;
+exports.project = project;
+exports.universe = universe;
+exports.bulk = bulk;
+exports.isAvailable = isAvailable;
+exports.resetIsAvailableCache = resetIsAvailableCache;
+exports.getGCPResidency = getGCPResidency;
+exports.setGCPResidency = setGCPResidency;
+exports.requestTimeout = requestTimeout;
+/**
+ * Copyright 2018 Google LLC
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+const gaxios_1 = __nccwpck_require__(7842);
+const jsonBigint = __nccwpck_require__(4826);
+const gcp_residency_1 = __nccwpck_require__(4888);
+const logger = __importStar(__nccwpck_require__(7235));
+exports.BASE_PATH = '/computeMetadata/v1';
+exports.HOST_ADDRESS = 'http://169.254.169.254';
+exports.SECONDARY_HOST_ADDRESS = 'http://metadata.google.internal.';
+exports.HEADER_NAME = 'Metadata-Flavor';
+exports.HEADER_VALUE = 'Google';
+exports.HEADERS = Object.freeze({ [exports.HEADER_NAME]: exports.HEADER_VALUE });
+const log = logger.log('gcp-metadata');
+/**
+ * Metadata server detection override options.
+ *
+ * Available via `process.env.METADATA_SERVER_DETECTION`.
+ */
+exports.METADATA_SERVER_DETECTION = Object.freeze({
+    'assume-present': "don't try to ping the metadata server, but assume it's present",
+    none: "don't try to ping the metadata server, but don't try to use it either",
+    'bios-only': "treat the result of a BIOS probe as canonical (don't fall back to pinging)",
+    'ping-only': 'skip the BIOS probe, and go straight to pinging',
+});
+/**
+ * Returns the base URL while taking into account the GCE_METADATA_HOST
+ * environment variable if it exists.
+ *
+ * @returns The base URL, e.g., http://169.254.169.254/computeMetadata/v1.
+ */
+function getBaseUrl(baseUrl) {
+    if (!baseUrl) {
+        baseUrl =
+            process.env.GCE_METADATA_IP ||
+                process.env.GCE_METADATA_HOST ||
+                exports.HOST_ADDRESS;
+    }
+    // If no scheme is provided default to HTTP:
+    if (!/^https?:\/\//.test(baseUrl)) {
+        baseUrl = `http://${baseUrl}`;
+    }
+    return new URL(exports.BASE_PATH, baseUrl).href;
+}
+// Accepts an options object passed from the user to the API. In previous
+// versions of the API, it referred to a `Request` or an `Axios` request
+// options object.  Now it refers to an object with very limited property
+// names. This is here to help ensure users don't pass invalid options when
+// they  upgrade from 0.4 to 0.5 to 0.8.
+function validate(options) {
+    Object.keys(options).forEach(key => {
+        switch (key) {
+            case 'params':
+            case 'property':
+            case 'headers':
+                break;
+            case 'qs':
+                throw new Error("'qs' is not a valid configuration option. Please use 'params' instead.");
+            default:
+                throw new Error(`'${key}' is not a valid configuration option.`);
+        }
+    });
+}
+async function metadataAccessor(type, options = {}, noResponseRetries = 3, fastFail = false) {
+    const headers = new Headers(exports.HEADERS);
+    let metadataKey = '';
+    let params = {};
+    if (typeof type === 'object') {
+        const metadataAccessor = type;
+        new Headers(metadataAccessor.headers).forEach((value, key) => headers.set(key, value));
+        metadataKey = metadataAccessor.metadataKey;
+        params = metadataAccessor.params || params;
+        noResponseRetries = metadataAccessor.noResponseRetries || noResponseRetries;
+        fastFail = metadataAccessor.fastFail || fastFail;
+    }
+    else {
+        metadataKey = type;
+    }
+    if (typeof options === 'string') {
+        metadataKey += `/${options}`;
+    }
+    else {
+        validate(options);
+        if (options.property) {
+            metadataKey += `/${options.property}`;
+        }
+        new Headers(options.headers).forEach((value, key) => headers.set(key, value));
+        params = options.params || params;
+    }
+    const requestMethod = fastFail ? fastFailMetadataRequest : gaxios_1.request;
+    const req = {
+        url: `${getBaseUrl()}/${metadataKey}`,
+        headers,
+        retryConfig: { noResponseRetries },
+        params,
+        responseType: 'text',
+        timeout: requestTimeout(),
+    };
+    log.info('instance request %j', req);
+    const res = await requestMethod(req);
+    log.info('instance metadata is %s', res.data);
+    const metadataFlavor = res.headers.get(exports.HEADER_NAME);
+    if (metadataFlavor !== exports.HEADER_VALUE) {
+        throw new RangeError(`Invalid response from metadata service: incorrect ${exports.HEADER_NAME} header. Expected '${exports.HEADER_VALUE}', got ${metadataFlavor ? `'${metadataFlavor}'` : 'no header'}`);
+    }
+    if (typeof res.data === 'string') {
+        try {
+            return jsonBigint.parse(res.data);
+        }
+        catch {
+            /* ignore */
+        }
+    }
+    return res.data;
+}
+async function fastFailMetadataRequest(options) {
+    const secondaryOptions = {
+        ...options,
+        url: options.url
+            ?.toString()
+            .replace(getBaseUrl(), getBaseUrl(exports.SECONDARY_HOST_ADDRESS)),
+    };
+    // We race a connection between DNS/IP to metadata server. There are a couple
+    // reasons for this:
+    //
+    // 1. the DNS is slow in some GCP environments; by checking both, we might
+    //    detect the runtime environment significantly faster.
+    // 2. we can't just check the IP, which is tarpitted and slow to respond
+    //    on a user's local machine.
+    //
+    // Returns first resolved promise or if all promises get rejected we return an AggregateError.
+    //
+    // Note, however, if a failure happens prior to a success, a rejection should
+    // occur, this is for folks running locally.
+    //
+    const r1 = (0, gaxios_1.request)(options);
+    const r2 = (0, gaxios_1.request)(secondaryOptions);
+    return Promise.any([r1, r2]);
+}
+/**
+ * Obtain metadata for the current GCE instance.
+ *
+ * @see {@link https://cloud.google.com/compute/docs/metadata/predefined-metadata-keys}
+ *
+ * @example
+ * ```
+ * const serviceAccount: {} = await instance('service-accounts/');
+ * const serviceAccountEmail: string = await instance('service-accounts/default/email');
+ * ```
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function instance(options) {
+    return metadataAccessor('instance', options);
+}
+/**
+ * Obtain metadata for the current GCP project.
+ *
+ * @see {@link https://cloud.google.com/compute/docs/metadata/predefined-metadata-keys}
+ *
+ * @example
+ * ```
+ * const projectId: string = await project('project-id');
+ * const numericProjectId: number = await project('numeric-project-id');
+ * ```
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function project(options) {
+    return metadataAccessor('project', options);
+}
+/**
+ * Obtain metadata for the current universe.
+ *
+ * @see {@link https://cloud.google.com/compute/docs/metadata/predefined-metadata-keys}
+ *
+ * @example
+ * ```
+ * const universeDomain: string = await universe('universe-domain');
+ * ```
+ */
+function universe(options) {
+    return metadataAccessor('universe', options);
+}
+/**
+ * Retrieve metadata items in parallel.
+ *
+ * @see {@link https://cloud.google.com/compute/docs/metadata/predefined-metadata-keys}
+ *
+ * @example
+ * ```
+ * const data = await bulk([
+ *   {
+ *     metadataKey: 'instance',
+ *   },
+ *   {
+ *     metadataKey: 'project/project-id',
+ *   },
+ * ] as const);
+ *
+ * // data.instance;
+ * // data['project/project-id'];
+ * ```
+ *
+ * @param properties The metadata properties to retrieve
+ * @returns The metadata in `metadatakey:value` format
+ */
+async function bulk(properties) {
+    const r = {};
+    await Promise.all(properties.map(item => {
+        return (async () => {
+            const res = await metadataAccessor(item);
+            const key = item.metadataKey;
+            r[key] = res;
+        })();
+    }));
+    return r;
+}
+/*
+ * How many times should we retry detecting GCP environment.
+ */
+function detectGCPAvailableRetries() {
+    return process.env.DETECT_GCP_RETRIES
+        ? Number(process.env.DETECT_GCP_RETRIES)
+        : 0;
+}
+let cachedIsAvailableResponse;
+/**
+ * Determine if the metadata server is currently available.
+ */
+async function isAvailable() {
+    if (process.env.METADATA_SERVER_DETECTION) {
+        const value = process.env.METADATA_SERVER_DETECTION.trim().toLocaleLowerCase();
+        if (!(value in exports.METADATA_SERVER_DETECTION)) {
+            throw new RangeError(`Unknown \`METADATA_SERVER_DETECTION\` env variable. Got \`${value}\`, but it should be \`${Object.keys(exports.METADATA_SERVER_DETECTION).join('`, `')}\`, or unset`);
+        }
+        switch (value) {
+            case 'assume-present':
+                return true;
+            case 'none':
+                return false;
+            case 'bios-only':
+                return getGCPResidency();
+            case 'ping-only':
+            // continue, we want to ping the server
+        }
+    }
+    try {
+        // If a user is instantiating several GCP libraries at the same time,
+        // this may result in multiple calls to isAvailable(), to detect the
+        // runtime environment. We use the same promise for each of these calls
+        // to reduce the network load.
+        if (cachedIsAvailableResponse === undefined) {
+            cachedIsAvailableResponse = (async () => {
+                try {
+                    await metadataAccessor('instance', undefined, detectGCPAvailableRetries(), 
+                    // If the default HOST_ADDRESS has been overridden, we should not
+                    // make an effort to try SECONDARY_HOST_ADDRESS (as we are likely in
+                    // a non-GCP environment):
+                    !(process.env.GCE_METADATA_IP || process.env.GCE_METADATA_HOST));
+                    return true;
+                }
+                catch (e) {
+                    const err = e;
+                    if (process.env.DEBUG_AUTH) {
+                        console.info(err);
+                    }
+                    if (err.type === 'request-timeout') {
+                        // If running in a GCP environment, metadata endpoint should return
+                        // within ms.
+                        return false;
+                    }
+                    if (err.response && err.response.status === 404) {
+                        return false;
+                    }
+                    else {
+                        const errObj = e;
+                        const getErrorCodes = (err) => {
+                            if (!err)
+                                return ['UNKNOWN'];
+                            if (err.name === 'AggregateError' && Array.isArray(err.errors)) {
+                                return err.errors.flatMap(getErrorCodes);
+                            }
+                            if (err.code) {
+                                return [err.code.toString()];
+                            }
+                            if (err.cause) {
+                                return getErrorCodes(err.cause);
+                            }
+                            return ['UNKNOWN'];
+                        };
+                        const codes = getErrorCodes(errObj);
+                        const isExpected = codes.every((code) => [
+                            'EHOSTDOWN',
+                            'EHOSTUNREACH',
+                            'ENETUNREACH',
+                            'ENOENT',
+                            'ENOTFOUND',
+                            'ECONNREFUSED',
+                        ].includes(code));
+                        if (!isExpected) {
+                            const code = err.code ? err.code.toString() : 'UNKNOWN';
+                            process.emitWarning(`received unexpected error = ${err.message} code = ${code}`, 'MetadataLookupWarning');
+                        }
+                        // Failure to resolve the metadata service means that it is not available.
+                        return false;
+                    }
+                }
+            })();
+        }
+        return await cachedIsAvailableResponse;
+    }
+    catch (e) {
+        // This block should technically not be reached because the async IIFE catches its own errors
+        return false;
+    }
+}
+/**
+ * reset the memoized isAvailable() lookup.
+ */
+function resetIsAvailableCache() {
+    cachedIsAvailableResponse = undefined;
+}
+/**
+ * A cache for the detected GCP Residency.
+ */
+exports.gcpResidencyCache = null;
+/**
+ * Detects GCP Residency.
+ * Caches results to reduce costs for subsequent calls.
+ *
+ * @see setGCPResidency for setting
+ */
+function getGCPResidency() {
+    if (exports.gcpResidencyCache === null) {
+        setGCPResidency();
+    }
+    return exports.gcpResidencyCache;
+}
+/**
+ * Sets the detected GCP Residency.
+ * Useful for forcing metadata server detection behavior.
+ *
+ * Set `null` to autodetect the environment (default behavior).
+ * @see getGCPResidency for getting
+ */
+function setGCPResidency(value = null) {
+    exports.gcpResidencyCache = value !== null ? value : (0, gcp_residency_1.detectGCPResidency)();
+}
+/**
+ * Obtain the timeout for requests to the metadata server.
+ *
+ * In certain environments and conditions requests can take longer than
+ * the default timeout to complete. This function will determine the
+ * appropriate timeout based on the environment.
+ *
+ * @returns {number} a request timeout duration in milliseconds.
+ */
+function requestTimeout() {
+    return getGCPResidency() ? 0 : 3000;
+}
+__exportStar(__nccwpck_require__(4888), exports);
+//# sourceMappingURL=index.js.map
+
+/***/ }),
+
 /***/ 8823:
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
@@ -59334,7 +60870,7 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"gaxios","version":"7.1.5","de
 /***/ 6066:
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"name":"google-auth-library","version":"10.9.0","author":"Google Inc.","description":"Google APIs Authentication Client Library for Node.js","engines":{"node":">=18"},"main":"./build/src/index.js","types":"./build/src/index.d.ts","repository":{"type":"git","directory":"core/packages/google-auth-library-nodejs","url":"https://github.com/googleapis/google-cloud-node.git"},"keywords":["google","api","google apis","client","client library"],"dependencies":{"base64-js":"^1.3.0","ecdsa-sig-formatter":"^1.0.11","gaxios":"^7.1.4","gcp-metadata":"8.1.2","google-logging-utils":"1.1.3","jws":"^4.0.0"},"devDependencies":{"@types/base64-js":"^1.2.5","@types/jws":"^3.1.0","@types/mocha":"^10.0.10","@types/mv":"^2.1.0","@types/ncp":"^2.0.8","@types/node":"^24.0.0","@types/sinon":"^21.0.0","assert-rejects":"^1.0.0","c8":"^10.1.3","codecov":"^3.8.3","gts":"^6.0.2","is-docker":"^3.0.0","jsdoc":"^4.0.4","jsdoc-fresh":"^5.0.0","jsdoc-region-tag":"^4.0.0","karma":"^6.0.0","karma-chrome-launcher":"^3.0.0","karma-coverage":"^2.0.0","karma-firefox-launcher":"^2.0.0","karma-mocha":"^2.0.0","karma-sourcemap-loader":"^0.4.0","karma-webpack":"^5.0.1","keypair":"^1.0.4","mocha":"^11.1.0","mv":"^2.1.1","ncp":"^2.0.0","nock":"^14.0.5","null-loader":"^4.0.1","puppeteer":"^24.0.0","sinon":"21.0.3","ts-loader":"^9.5.2","typescript":"5.8.3","webpack":"^5.97.1","webpack-cli":"^6.0.1"},"files":["build/src","!build/src/**/*.map"],"scripts":{"test":"c8 mocha build/test","clean":"gts clean","prepare":"npm run compile","lint":"gts check --no-inline-config","compile":"tsc -p .","fix":"gts fix","pretest":"npm run compile -- --sourceMap","docs":"jsdoc -c .jsdoc.js","samples-setup":"cd samples/ && npm link ../ && npm run setup && cd ../","samples-test":"cd samples/ && npm link ../ && npm test && cd ../","system-test":"mocha build/system-test --timeout 60000","presystem-test":"npm run compile -- --sourceMap","webpack":"webpack","browser-test":"karma start","prelint":"cd samples; npm link ../; npm install"},"license":"Apache-2.0","homepage":"https://github.com/googleapis/google-cloud-node/tree/main/core/packages/google-auth-library-nodejs"}');
+module.exports = /*#__PURE__*/JSON.parse('{"name":"google-auth-library","version":"11.0.2","author":"Google Inc.","description":"Google APIs Authentication Client Library for Node.js","engines":{"node":">=22"},"main":"./build/src/index.js","types":"./build/src/index.d.ts","repository":{"type":"git","directory":"core/packages/google-auth-library-nodejs","url":"https://github.com/googleapis/google-cloud-node.git"},"keywords":["google","api","google apis","client","client library"],"dependencies":{"base64-js":"^1.3.0","ecdsa-sig-formatter":"^1.0.11","gaxios":"^7.1.4","gcp-metadata":"^9.0.0","google-logging-utils":"^2.0.0","jws":"^4.0.0"},"devDependencies":{"@types/base64-js":"^1.2.5","@types/jws":"^3.1.0","@types/mocha":"^10.0.10","@types/mv":"^2.1.0","@types/ncp":"^2.0.8","@types/node":"^24.0.0","@types/sinon":"^21.0.0","assert-rejects":"^1.0.0","c8":"^10.1.3","codecov":"^3.8.3","gts":"^6.0.2","is-docker":"^3.0.0","jsdoc":"^4.0.4","jsdoc-fresh":"^6.0.0","jsdoc-region-tag":"^5.0.0","karma":"^6.0.0","karma-chrome-launcher":"^3.0.0","karma-coverage":"^2.0.0","karma-firefox-launcher":"^2.0.0","karma-mocha":"^2.0.0","karma-sourcemap-loader":"^0.4.0","karma-webpack":"^5.0.0","keypair":"^1.0.4","mocha":"^11.1.0","mv":"^2.1.1","ncp":"^2.0.0","nock":"^14.0.5","null-loader":"^4.0.1","puppeteer":"^24.0.0","sinon":"21.0.3","ts-loader":"^9.5.2","typescript":"5.8.3","webpack":"^5.97.1","webpack-cli":"^6.0.1"},"files":["build/src","!build/src/**/*.map"],"scripts":{"test":"c8 mocha build/test","clean":"gts clean","prepare":"npm run compile","lint":"gts check --no-inline-config","compile":"tsc -p .","fix":"gts fix","pretest":"npm run compile -- --sourceMap","docs":"jsdoc -c .jsdoc.js","samples-setup":"cd samples/ && npm link ../ && npm run setup && cd ../","samples-test":"cd samples/ && npm link ../ && npm test && cd ../","system-test":"mocha build/system-test --timeout 60000","presystem-test":"npm run compile -- --sourceMap","webpack":"webpack","browser-test":"karma start","prelint":"cd samples; npm link ../; npm install"},"license":"Apache-2.0","homepage":"https://github.com/googleapis/google-cloud-node/tree/main/core/packages/google-auth-library-nodejs"}');
 
 /***/ }),
 
@@ -59395,6 +60931,9 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"googleapis-common","version":
 /******/ __nccwpck_require__.m = __webpack_modules__;
 /******/ 
 /************************************************************************/
+/******/ /* webpack/runtime/asset-relocator-loader */
+/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = decodeURIComponent(new URL('.', import.meta.url).pathname).slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
+/******/ 
 /******/ /* webpack/runtime/create fake namespace object */
 /******/ (() => {
 /******/ 	var getProto = Object.getPrototypeOf ? (obj) => (Object.getPrototypeOf(obj)) : (obj) => (obj.__proto__);
@@ -59474,10 +61013,6 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"googleapis-common","version":
 /******/ 		Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 	};
 /******/ })();
-/******/ 
-/******/ /* webpack/runtime/compat */
-/******/ 
-/******/ if (typeof __nccwpck_require__ !== 'undefined') __nccwpck_require__.ab = new URL('.', import.meta.url).pathname.slice(import.meta.url.match(/^file:\/\/\/\w:/) ? 1 : 0, -1) + "/";
 /******/ 
 /******/ /* webpack/runtime/import chunk loading */
 /******/ (() => {

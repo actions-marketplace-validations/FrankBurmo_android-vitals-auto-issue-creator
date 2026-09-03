@@ -16,7 +16,7 @@ Welcome, AI Agent! This guide outlines the essential details of this repository 
 Run these commands from the repository root:
 * **Build:** `npm run build` (compiles TS to bundled JS in `dist/`).
 * **Test:** `npm test` (runs Vitest unit tests).
-* **Lint:** `npm run lint` (runs ESLint).
+* **Lint:** `npm run lint` (runs Oxlint).
 * **Install:** `npm ci` (clean dependency install).
 
 ---

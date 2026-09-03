@@ -1,0 +1,9 @@
+{
+  "name": "ncc-ts6-shim",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Isolated install of the TypeScript 6 compiler API, used only so @vercel/ncc's ts-loader has a compatible 'typescript' package to require (see vercel/ncc#1336). The real project keeps typescript@7 as its devDependency.",
+  "dependencies": {
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  }
+}
